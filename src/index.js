@@ -5,9 +5,8 @@ import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import reducer from "./reducers/RootReducer";
 
-import App from "./App";
+import App from "./components/app/App";
 import registerServiceWorker from "./registerServiceWorker";
-import "./index.css";
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 const store = createStore(reducer, devTools, applyMiddleware(thunk));
