@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { NavLink } from "react-router-dom";
+import PropTypes from "prop-types";
 import { Route } from "react-router-dom";
 import AppContainer from "../../containers/AppContainer";
 import { generateUrl } from "../../helpers/helper";
@@ -20,13 +20,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    console.log(process.env);
     this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    // fetchFeaturedPhotos()
-    //   .then(data => data.json())
-    //   .then(json => storeFeaturedPhotos(json))
-    //   .catch(e => this.setState({ e: e }));
+    fetchFeaturedPhotos()
+      .then(data => data.json())
+      .then(json => storeFeaturedPhotos(json))
+      .catch(e => this.setState({ e: e }));
   }
 
   morePhotos() {
@@ -74,5 +73,13 @@ class App extends Component {
     );
   }
 }
+
+App.propTypes = {
+  fetchFeaturedPhotos: PropTypes.func,
+  storeFeaturedPhotos: PropTypes.func,
+  generatorFetch: PropTypes.func,
+  featured: PropTypes.array
+};
+
 
 export default AppContainer(App);
