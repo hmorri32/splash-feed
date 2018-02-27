@@ -22,3 +22,4 @@ yarn-error.log*
 
 variables.css
 .env
+package-lock.json
