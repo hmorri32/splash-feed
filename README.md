@@ -7,7 +7,7 @@ To run locally:
 
 Grab an Unsplash API key from: `https://unsplash.com/developers`
 
-Set it as an env variable named `REACT_APP_SPLASH_ID = yourCoolKey`.
+Set it as an env variable like `REACT_APP_SPLASH_ID = yourCoolKey`.
 
 `npm install`
 
