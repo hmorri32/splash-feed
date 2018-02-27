@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import find from "../app/assets/find.png";
 
 export const Gallery = ({ flex, morePhotos, renderFeatured }) => {
@@ -12,4 +13,10 @@ export const Gallery = ({ flex, morePhotos, renderFeatured }) => {
       </button>
     </div>
   );
+};
+
+Gallery.propTypes = {
+  flex: PropTypes.bool,
+  morePhotos: PropTypes.func,
+  renderFeatured: PropTypes.func
 };
