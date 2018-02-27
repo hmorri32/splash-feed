@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import grid from "./assets/grid.png";
 import list from "./assets/list.png";
@@ -40,4 +41,9 @@ export const Header = ({ active, handleActive }) => {
       </div>
     </header>
   );
+};
+
+Header.propTypes = {
+  active: PropTypes.bool,
+  handleActive: PropTypes.func
 };
