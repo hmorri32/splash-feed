@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import grid from "../app/assets/grid.png";
-import list from "../app/assets/list.png";
+import grid from "./assets/grid.png";
+import list from "./assets/list.png";
 
 export const Header = ({ active, handleActive }) => {
   return (
