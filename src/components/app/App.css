@@ -40,7 +40,11 @@
       color: white; }
 
 .barber-title {
-  font-size: 1.5em; }
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #000000; }
+  .barber-title:hover {
+    color: #33adff; }
 
 .photo-grid {
   display: grid;
@@ -100,3 +104,17 @@
     height: 18px;
     width: 18px;
     padding-right: 15px; }
+
+select {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  padding: 0 7px 0 7px;
+  background: none;
+  font-size: 20px;
+  color: #2f80ed;
+  border: none;
+  border-radius: 2px;
+  justify-content: space-around;
+  align-items: center; }
