@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import AppContainer from "../../containers/AppContainer";
 import grid from "./assets/grid.png";
 import list from "./assets/list.png";
+import find from "./assets/find.png";
 import { generateUrl } from "../../helpers/helper";
 import "./App.css";
 
@@ -19,10 +20,10 @@ class App extends Component {
   componentDidMount() {
     const { value } = this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    fetchFeaturedPhotos()
-      .then(data => data.json())
-      .then(json => storeFeaturedPhotos(json))
-      .catch(e => this.setState({ e: e }));
+    // fetchFeaturedPhotos()
+    //   .then(data => data.json())
+    //   .then(json => storeFeaturedPhotos(json))
+    //   .catch(e => this.setState({ e: e }));
   }
 
   morePhotos() {
@@ -43,7 +44,7 @@ class App extends Component {
     return featured.map((photo, i) => {
       return (
         <div key={i} className="photo-card">
-          <img src={photo.cover_photo.urls.raw} alt="" />
+          <img src={photo.cover_photo.urls.raw}/>
           <p>{photo.title}</p>
         </div>
       );
@@ -60,19 +61,19 @@ class App extends Component {
             <button
               className={active === 1 ? "btn grid-btn active" : "btn grid-btn"}
               onClick={() => this.handleActive(1)}>
-              <img src={grid} alt="" />Grid
+              <img src={grid}/>Grid
             </button>
             <button
               className={active === 2 ? "btn grid-btn active" : "btn grid-btn"}
               onClick={() => this.handleActive(2)}>
-              <img src={list} alt="" />List
+              <img src={list}/>List
             </button>
           </div>
         </header>
         <div className={flex ? "photo-flex" : "photo-grid"}>
           {this.renderFeatured()}
-          <button onClick={() => this.morePhotos()}>GET MOAR</button>
         </div>
+        <button className="btn get-more"onClick={() => this.morePhotos()}><img src={find}/> Get Photos</button>
       </div>
     );
   }
