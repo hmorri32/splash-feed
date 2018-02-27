@@ -22,10 +22,10 @@ class App extends Component {
   componentDidMount() {
     this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    fetchFeaturedPhotos()
-      .then(data => data.json())
-      .then(json => storeFeaturedPhotos(json))
-      .catch(e => this.setState({ e: e }));
+    // fetchFeaturedPhotos()
+    //   .then(data => data.json())
+    //   .then(json => storeFeaturedPhotos(json))
+    //   .catch(e => this.setState({ e: e }));
   }
 
   morePhotos() {
