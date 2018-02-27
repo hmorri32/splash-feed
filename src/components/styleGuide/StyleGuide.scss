@@ -102,8 +102,50 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
-}
-.button {
-  @include btn-base;
-  border: 1px solid $barber-blue;
+  .button-wrap {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+  .button {
+    @include btn-base;
+    color: white;
+    width: 200px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .icon, .text {
+    width: 200px;
+    background: $barber-blue;
+    color: white;
+    justify-content: center;
+    align-items: flex-start;
+    &:hover {
+      background: $barber-hover;
+    }
+    &:active {
+      background: $barber-active;
+    }
+    img {
+      height: 18px;
+      width: 18px;
+      padding-right: 15px;
+    }
+  }
+  .hover-focus {
+    background: $barber-hover;
+    color: white;
+  }
+  .active {
+    background: $barber-active;
+  }
+
+  .disabled, .loader {
+    background: $barber-disable;
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
 }
