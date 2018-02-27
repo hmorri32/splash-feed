@@ -14,7 +14,7 @@ export const StyleGuide = () => {
         ш щ ъ ы ь э ю я Α Β Γ Δ Ε Ζ Η Θ Ι Κ Λ Μ Ν Ξ Ο Π Ρ Σ Τ Υ Φ Χ Ψ Ω α β γ δ
         ε ζ η θ ι κ λ μ ν ξ ο π ρ σ τ υ φ χ ψ ω ά Ά έ Έ έ Ή ί ϊ ΐ Ί ό Ό ύ ΰ ϋ Ύ
         Ϋ Ώ Ă Â Ê Ô Ơ Ư ă â ê ô ơ ư 1 2 3 4 5 6 7 8 9 0 ‘ ? ’ “ ! ” ( % ) [ # ]
-        / & \ + ÷ × = > ® © $ € £ ¥ ¢ : ; , . *
+        / & \ + ÷ × = ® © $ € £ ¥ ¢ : ; , . *
       </p>
       <p className="type regular">Regular</p>
       <p className="type regular-italic">Regular Italic</p>
