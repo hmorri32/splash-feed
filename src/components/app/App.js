@@ -2,11 +2,13 @@ import React, { Component } from "react";
 import AppContainer from "../../containers/AppContainer";
 import grid from "./assets/grid.png";
 import list from "./assets/list.png";
+import { generateUrl } from "../../helpers/helper";
 import "./App.css";
 
 class App extends Component {
   constructor() {
     super();
+    this.generator = generateUrl();
     this.state = {
       e: "",
       flex: false,
@@ -15,15 +17,25 @@ class App extends Component {
   }
 
   componentDidMount() {
+    const { value } = this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    // fetchFeaturedPhotos()
-    // .then(data => data.json())
-    // .then(json => storeFeaturedPhotos(json))
-    // .catch(e => this.setState({ e: e }));
+    fetchFeaturedPhotos()
+      .then(data => data.json())
+      .then(json => storeFeaturedPhotos(json))
+      .catch(e => this.setState({ e: e }));
+  }
+
+  morePhotos() {
+    const { value } = this.generator.next();
+    const { generatorFetch } = this.props;
+    generatorFetch(value);
   }
 
   handleActive(id) {
+    const { active } = this.state;
     this.setState({ active: id });
+    let newFlex = active === 1 ? true : false;
+    this.setState({ flex: newFlex });
   }
 
   renderFeatured() {
@@ -39,9 +51,7 @@ class App extends Component {
   }
 
   render() {
-    const { featured } = this.props;
     const { flex, active } = this.state;
-
     return (
       <div className="App">
         <header className="barber-header">
@@ -61,6 +71,7 @@ class App extends Component {
         </header>
         <div className={flex ? "photo-flex" : "photo-grid"}>
           {this.renderFeatured()}
+          <button onClick={() => this.morePhotos()}>GET MOAR</button>
         </div>
       </div>
     );
