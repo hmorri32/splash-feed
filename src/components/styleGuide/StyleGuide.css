@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans : 400,600,700");
+.style-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 50px;
+  margin-right: 50px;
+  align-items: center; }
+  .style-container .type-header {
+    font-size: 44px;
+    color: #2f80ed;
+    text-transform: uppercase;
+    margin: 50px; }
+  .style-container .open-sans {
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: 300px;
+    padding: 10px;
+    text-align: center; }
+  .style-container .characters {
+    font-size: 20px;
+    width: 50%; }
+  .style-container .type {
+    font-size: 30px;
+    margin: 10px; }
+  .style-container .regular {
+    font-weight: 400; }
+  .style-container .regular-italic {
+    font-weight: 400;
+    font-style: italic; }
+  .style-container .semi-bold {
+    font-weight: 600; }
+  .style-container .semi-bold-italic {
+    font-weight: 600;
+    font-style: italic; }
+  .style-container .bold {
+    font-weight: 700; }
+  .style-container .bold-italic {
+    font-weight: 700;
+    font-style: italic; }
+
+.palette-header {
+  align-self: center; }
+
+.palette {
+  width: 50%;
+  justify-self: center;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px; }
+  .palette .color {
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white; }
+    .palette .color p {
+      font-size: 25px;
+      text-transform: uppercase; }
+    .palette .color .color-name {
+      font-weight: 600;
+      font-size: 35px; }
+  .palette .color.one {
+    background: #000000; }
+  .palette .color.two {
+    background: #3f67d4; }
+  .palette .color.three {
+    background: #2f80ed; }
+  .palette .color.four {
+    background: #33adff; }
+  .palette .color.five {
+    background: #8eb7ed; }
+  .palette .color.six {
+    background: #c1d9fa; }
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+
+.button {
+  display: flex;
+  height: 50px;
+  width: 100px;
+  margin: 10px;
+  padding: 0 7px 0 7px;
+  background: none;
+  font-size: 20px;
+  color: #2f80ed;
+  border: none;
+  border-radius: 2px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid #2f80ed; }
