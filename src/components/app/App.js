@@ -20,6 +20,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    console.log(process.env);
     this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
     // fetchFeaturedPhotos()
