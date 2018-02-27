@@ -44,7 +44,7 @@ class App extends Component {
     return featured.map((photo, i) => {
       return (
         <div key={i} className="photo-card">
-          <img src={photo.cover_photo.urls.raw}/>
+          <img src={photo.cover_photo.urls.raw} />
           <p>{photo.title}</p>
         </div>
       );
@@ -61,19 +61,21 @@ class App extends Component {
             <button
               className={active === 1 ? "btn grid-btn active" : "btn grid-btn"}
               onClick={() => this.handleActive(1)}>
-              <img src={grid}/>Grid
+              <img src={grid} />Grid
             </button>
             <button
               className={active === 2 ? "btn grid-btn active" : "btn grid-btn"}
               onClick={() => this.handleActive(2)}>
-              <img src={list}/>List
+              <img src={list} />List
             </button>
           </div>
         </header>
         <div className={flex ? "photo-flex" : "photo-grid"}>
           {this.renderFeatured()}
         </div>
-        <button className="btn get-more"onClick={() => this.morePhotos()}><img src={find}/> Get Photos</button>
+        <button className="btn get-more" onClick={() => this.morePhotos()}>
+          <img src={find} /> Get Photos
+        </button>
       </div>
     );
   }
