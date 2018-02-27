@@ -1,5 +1,7 @@
 import React from "react";
 import "./StyleGuide.css";
+import find from "../app/assets/find.png";
+import loading from "./assets/loading.png";
 
 export const StyleGuide = () => {
   return (
@@ -51,12 +53,34 @@ export const StyleGuide = () => {
       </div>
       <div className="buttons">
         <h1 className="type-header">Buttons</h1>
-        <button className="button icon"><img src="" alt=""/> Click Me</button>
-        <button className="button text">Click Me</button>
-        <button className="button hover-focus">Click Me</button>
-        <button className="button active">Click Me</button>
-        <button className="button disabled">Click Me</button>
-        <button className="button loader"><img src="" alt=""/></button>
+        <div className="button-wrap">
+          <button className="button icon">
+            <img src={find} alt="" /> Click Me
+          </button>
+          <p>Text + Icon</p>
+        </div>
+        <div className="button-wrap">
+          <button className="button text">Click Me</button>
+          <p>Text</p>
+        </div>
+        <div className="button-wrap">
+          <button className="button hover-focus">Click Me</button>
+          <p>Hover/Focus</p>
+        </div>
+        <div className="button-wrap">
+          <button className="button active">Click Me</button>
+          <p>Active</p>
+        </div>
+        <div className="button-wrap">
+          <button className="button disabled">Click Me</button>
+          <p>Disabled</p>
+        </div>
+        <div className="button-wrap">
+          <button className="button loader">
+            <img src={loading} alt="" />
+          </button>
+          <p>Loader</p>
+        </div>
       </div>
     </div>
   );
