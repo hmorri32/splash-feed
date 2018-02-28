@@ -6,11 +6,11 @@ class PhotoDetail extends Component {
   findPhoto() {
     const { featured } = this.props;
     const { id } = this.props.match.params;
-    return featured.filter((photo) => photo.id === parseInt(id));
+    return featured.filter(photo => photo.id === parseInt(id));
   }
 
   render() {
-    const photo = this.findPhoto()[0]
+    const photo = this.findPhoto()[0];
 
     return <p>{photo.title}</p>;
   }
