@@ -1,0 +1,42 @@
+@import "../../styles/variables.scss";
+
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin: auto;
+  .user-name {
+    font-size: 1.3em;
+    font-weight: $font-bold;
+  }
+  .user-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    p {
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .user-profile {
+    margin-top: 50px;
+    border-radius: 50%;
+  }
+  .cover-photo {
+    max-height: 700px;
+    max-width: 700px;
+  }
+  .user-handle {
+    font-weight: $font-semibold;
+  }
+  .photo-title {
+    text-transform: uppercase;
+  }
+}

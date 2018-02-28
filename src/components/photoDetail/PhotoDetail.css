@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans : 400,600,700");
+.detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 75%;
+  margin: auto; }
+  .detail-container .user-name {
+    font-size: 1.3em;
+    font-weight: 700; }
+  .detail-container .user-location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px; }
+    .detail-container .user-location img {
+      width: 25px;
+      height: 25px; }
+    .detail-container .user-location p {
+      margin: 0;
+      padding: 0; }
+  .detail-container .user-profile {
+    margin-top: 50px;
+    border-radius: 50%; }
+  .detail-container .cover-photo {
+    max-height: 700px;
+    max-width: 700px; }
+  .detail-container .user-handle {
+    font-weight: 600; }
+  .detail-container .photo-title {
+    text-transform: uppercase; }
