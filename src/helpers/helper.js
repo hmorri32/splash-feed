@@ -8,12 +8,12 @@ export function* generatePages(total = 100, page = 1) {
 
 export function* generateUrl() {
   const generator = generatePages();
-  let { value, done } = generator.next();
+  var { value, done } = generator.next();
   while (!done) {
     yield `https://api.unsplash.com/collections/featured/?client_id=${
       process.env.REACT_APP_SPLASH_ID
     }&per_page=6&page=${value}`;
-    let { value, done } = generator.next();
+    var { value, done } = generator.next();
   }
   return `https://api.unsplash.com/collections/featured/?client_id=${
     process.env.REACT_APP_SPLASH_ID
