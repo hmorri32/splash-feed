@@ -10,8 +10,7 @@ export const Gallery = ({ flex, morePhotos, featured }) => {
     return featured.map((photo, i) => {
       return (
         <div key={i} className="photo-card">
-          <Photo i={i} photo={photo} />
-          <Link to={`/photo/${photo.id}`}>
+          <Link to={`/photo/${photo.id}`} className="photo-link">
             <img src={photo.cover_photo.urls.raw} alt="featured" />
             <p>{photo.title}</p>
           </Link>
