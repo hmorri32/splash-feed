@@ -2,10 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { Route } from "react-router-dom";
 import AppContainer from "../../containers/AppContainer";
+import PhotoDetail from "../photoDetail/PhotoDetail";
 import { generateUrl } from "../../helpers/helper";
 import { Header } from "../header/Header";
 import { Gallery } from "../gallery/Gallery";
 import { StyleGuide } from "../styleGuide/StyleGuide";
+
 import "./App.css";
 
 class App extends Component {
@@ -41,17 +43,17 @@ class App extends Component {
     this.setState({ flex: newFlex });
   }
 
-  renderFeatured() {
-    const { featured } = this.props;
-    return featured.map((photo, i) => {
-      return (
-        <div key={i} className="photo-card">
-          <img src={photo.cover_photo.urls.raw} alt="featured" />
-          <p>{photo.title}</p>
-        </div>
-      );
-    });
-  }
+  // renderFeatured() {
+  //   const { featured } = this.props;
+  //   return featured.map((photo, i) => {
+  //     return (
+  //       <div key={i} className="photo-card">
+  //         <img src={photo.cover_photo.urls.raw} alt="featured" />
+  //         <p>{photo.title}</p>
+  //       </div>
+  //     );
+  //   });
+  // }
 
   render() {
     const { flex, active } = this.state;
@@ -64,11 +66,14 @@ class App extends Component {
             <Gallery
               flex={flex}
               morePhotos={() => this.morePhotos()}
-              renderFeatured={() => this.renderFeatured()}
+              featured={this.props.featured}
             />
           )}
         />
         <Route path="/style-guide" component={StyleGuide} />
+        <Route exact path="/photo/:id"
+          render={({ match }) => <PhotoDetail match={match} />}
+        />
       </div>
     );
   }
@@ -80,6 +85,5 @@ App.propTypes = {
   generatorFetch: PropTypes.func,
   featured: PropTypes.array
 };
-
 
 export default AppContainer(App);
