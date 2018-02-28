@@ -1,29 +1,31 @@
 import * as help from "./helper.js";
 
 describe("generators", () => {
-  it("doesn't explode", () => {
-    expect(true).toEqual(true);
-  });
+  describe("url generator", () => {
+    it("doesn't explode", () => {
+      expect(true).toEqual(true);
+    });
 
-  it("generates initial URL", () => {
-    const url = {
-      value: `https://api.unsplash.com/collections/featured/?client_id=${
-        process.env.REACT_APP_SPLASH_ID
-      }&per_page=6&page=1`,
-      done: false
-    };
-    expect(help.generateUrl().next()).toEqual(url);
-  });
+    it("generates initial URL", () => {
+      const url = {
+        value: `https://api.unsplash.com/collections/featured/?client_id=${
+          process.env.REACT_APP_SPLASH_ID
+        }&per_page=6&page=1`,
+        done: false
+      };
+      expect(help.generateUrl().next()).toEqual(url);
+    });
 
-  it("generates incremented page counts in url", () => {
-    const generator = help.generateUrl();
+    it("generates incremented page counts in url", () => {
+      const generator = help.generateUrl();
 
-    expect(generator.next().value).toEqual(
-      `https://api.unsplash.com/collections/featured/?client_id=${process.env.REACT_APP_SPLASH_ID}&per_page=6&page=1`
-    );
-    expect(generator.next().value).toEqual(
-      `https://api.unsplash.com/collections/featured/?client_id=${process.env.REACT_APP_SPLASH_ID}&per_page=6&page=2`
-    );
+      expect(generator.next().value).toEqual(
+        `https://api.unsplash.com/collections/featured/?client_id=${process.env.REACT_APP_SPLASH_ID}&per_page=6&page=1`
+      );
+      expect(generator.next().value).toEqual(
+        `https://api.unsplash.com/collections/featured/?client_id=${process.env.REACT_APP_SPLASH_ID}&per_page=6&page=2`
+      );
+    });
   });
 
   describe("page count generator", () => {
