@@ -1,8 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import find from "../app/assets/find.png";
+import {Photo} from "../photo/Photo";
 
-export const Gallery = ({ flex, morePhotos, renderFeatured }) => {
+export const Gallery = ({ flex, morePhotos, featured }) => {
+  const renderFeatured = () => {
+    // const { featured } = this.props;
+    return featured.map((photo, i) => {
+      return (
+        <div key={i} className="photo-card">
+          <Photo i={i} photo={photo} />
+          <Link to={`/photo/${photo.id}`}>
+            <img src={photo.cover_photo.urls.raw} alt="featured" />
+            <p>{photo.title}</p>
+          </Link>
+        </div>
+      );
+    });
+  };
   return (
     <div>
       <div className={flex ? "photo-flex" : "photo-grid"}>
@@ -18,5 +34,5 @@ export const Gallery = ({ flex, morePhotos, renderFeatured }) => {
 Gallery.propTypes = {
   flex: PropTypes.bool,
   morePhotos: PropTypes.func,
-  renderFeatured: PropTypes.func
+  featured: PropTypes.array
 };
