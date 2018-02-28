@@ -55,6 +55,17 @@
     display: grid;
     grid-template-columns: 1;
     grid-template-rows: 1; }
+    .photo-grid .photo-card .photo-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 25px;
+      color: #2f80ed;
+      flex-direction: column; }
+      .photo-grid .photo-card .photo-link:hover {
+        color: #33adff; }
     .photo-grid .photo-card img {
       max-height: 400px;
       width: 100%;
@@ -70,6 +81,16 @@
     display: flex;
     margin: 20px;
     align-items: center; }
+    .photo-flex .photo-card .photo-link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 25px;
+      color: #2f80ed; }
+      .photo-flex .photo-card .photo-link:hover {
+        color: #33adff; }
     .photo-flex .photo-card p {
       margin: 0;
       padding: 30px; }
