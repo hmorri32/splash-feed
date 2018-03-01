@@ -5,7 +5,7 @@ import AppContainer from "../../containers/AppContainer";
 import PhotoDetail from "../photoDetail/PhotoDetail";
 import { generateUrl } from "../../helpers/helper";
 import { Header } from "../header/Header";
-import { Gallery } from "../gallery/Gallery";
+import Gallery from "../gallery/Gallery";
 import { StyleGuide } from "../styleGuide/StyleGuide";
 
 import "./App.css";
@@ -24,10 +24,10 @@ class App extends Component {
   componentDidMount() {
     this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    fetchFeaturedPhotos()
-      .then(data => data.json())
-      .then(json => storeFeaturedPhotos(json))
-      .catch(e => this.setState({ e: e }));
+    // fetchFeaturedPhotos()
+    //   .then(data => data.json())
+    //   .then(json => storeFeaturedPhotos(json))
+    //   .catch(e => this.setState({ e: e }));
   }
 
   morePhotos() {
@@ -60,15 +60,12 @@ class App extends Component {
     return (
       <div className="App">
         <Header active={active} handleActive={id => this.handleActive(id)} />
-        <Route
-          exact path="/"
-          render={() => (
-            <Gallery
-              flex={flex}
-              morePhotos={() => this.morePhotos()}
-              featured={this.props.featured}
-            />
-          )}
+        <Route exact path="/" render={() => (
+          <Gallery
+            flex={flex}
+            morePhotos={() => this.morePhotos()}
+            featured={this.props.featured}
+          />)}
         />
         <Route path="/style-guide" component={StyleGuide} />
         <Route exact path="/photo/:id"
