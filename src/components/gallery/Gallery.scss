@@ -1,0 +1,32 @@
+@import "../../styles/variables.scss";
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  input {
+    width: 50%;
+    border-radius: 5px;
+    border: 1px solid black;
+    outline: none;
+    text-shadow: none;
+    height: 50px;
+    font-size: 40px;
+    text-align: center;
+    &:focus {
+      outline: none;
+      border: 1px solid $barber-hover;
+      color: $barber-blue;
+    }
+  }
+  button {
+    @include btn-base;
+    display: block;
+    &:hover {
+      border: 1px solid $barber-hover;
+      background: $barber-hover;
+      color: white;
+      cursor: pointer;
+    }
+  }
+}
