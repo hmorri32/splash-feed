@@ -41,6 +41,7 @@
   font-size: 1.5em;
   text-decoration: none;
   color: $barber-black;
+  padding-right: 20px;
   &:hover {
     color: $barber-hover;
   }
@@ -63,7 +64,7 @@
       }
     }
     img {
-      max-height: 400px;
+      max-height: 360px;
       width: 100%;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
@@ -91,8 +92,9 @@
       padding: 30px;
     }
     img {
-      height: 200px;
-      width: 200px;
+      height: 300px;
+      width: 300px;
+      object-fit: cover;
     }
   }
 }

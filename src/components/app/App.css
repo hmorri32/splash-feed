@@ -42,7 +42,8 @@
 .barber-title {
   font-size: 1.5em;
   text-decoration: none;
-  color: #000000; }
+  color: #000000;
+  padding-right: 20px; }
   .barber-title:hover {
     color: #33adff; }
 
@@ -67,7 +68,7 @@
       .photo-grid .photo-card .photo-link:hover {
         color: #33adff; }
     .photo-grid .photo-card img {
-      max-height: 400px;
+      max-height: 360px;
       width: 100%;
       grid-column: 1 / -1;
       grid-row: 1 / -1;
@@ -95,8 +96,9 @@
       margin: 0;
       padding: 30px; }
     .photo-flex .photo-card img {
-      height: 200px;
-      width: 200px; }
+      height: 300px;
+      width: 300px;
+      object-fit: cover; }
 
 .btn.get-more {
   display: flex;
