@@ -24,10 +24,10 @@ class App extends Component {
   componentDidMount() {
     this.generator.next();
     const { fetchFeaturedPhotos, storeFeaturedPhotos } = this.props;
-    // fetchFeaturedPhotos()
-    //   .then(data => data.json())
-    //   .then(json => storeFeaturedPhotos(json))
-    //   .catch(e => this.setState({ e: e }));
+    fetchFeaturedPhotos()
+      .then(data => data.json())
+      .then(json => storeFeaturedPhotos(json))
+      .catch(e => this.setState({ e: e }));
   }
 
   morePhotos() {
@@ -42,18 +42,6 @@ class App extends Component {
     let newFlex = active === 1 ? true : false;
     this.setState({ flex: newFlex });
   }
-
-  // renderFeatured() {
-  //   const { featured } = this.props;
-  //   return featured.map((photo, i) => {
-  //     return (
-  //       <div key={i} className="photo-card">
-  //         <img src={photo.cover_photo.urls.raw} alt="featured" />
-  //         <p>{photo.title}</p>
-  //       </div>
-  //     );
-  //   });
-  // }
 
   render() {
     const { flex, active } = this.state;
