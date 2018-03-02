@@ -4,6 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Route } from "react-router-dom";
 import grid from "./assets/grid.png";
 import list from "./assets/list.png";
+import "./Header.css";
 
 export const Header = ({ active, handleActive }) => {
   return (
