@@ -21,4 +21,4 @@ Run the test suite with `npm test`
 
 **Find it live on Heroku: [splash-feed](https://splash-feed.herokuapp.com/)**
 
-[!yung-splash](https://screenshots.firefox.com/S1ILvIj4bchLoqWf/localhost)
+![yung-splash](https://screenshotscdn.firefoxusercontent.com/images/d58408c0-5709-482e-8439-5bc39e43b554.png)
