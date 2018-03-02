@@ -3,7 +3,8 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import GalleryContainer from "../../containers/GalleryContainer";
 import find from "../app/assets/find.png";
-// import {Photo} from "../photo/Photo";
+import { Photo } from "../photo/Photo";
+import "./Gallery.css";
 
 class Gallery extends Component {
   constructor() {
@@ -21,12 +22,12 @@ class Gallery extends Component {
     const { featured } = this.props;
     return featured.map((photo, i) => {
       return (
-        <div key={i} className="photo-card">
-          <Link to={`/photo/${photo.id}`} className="photo-link">
-            <img src={photo.cover_photo.urls.raw} alt="featured" />
-            <p>{photo.title}</p>
-          </Link>
-        </div>
+        <Photo
+          src={photo.cover_photo.urls.regular}
+          key={i}
+          id={photo.id}
+          title={photo.title}
+        />
       );
     });
   }
@@ -34,30 +35,25 @@ class Gallery extends Component {
   renderSearched() {
     const { search } = this.state;
     return search.map((photo, i) => {
-      return (
-        <div className="photo-card" key={i}>
-          <Link to={`/photo/${photo.id}`} className="photo-link">
-            <img src={photo.urls.regular} alt="featured" />
-          </Link>
-        </div>
-      );
+      return <Photo src={photo.urls.regular} key={i} id={photo.id} photo={photo}/>;
     });
   }
 
   handleSubmit(e, query) {
-    const { fetchSearchedPhotos, storeSearchedPhotos } = this.props;
+    const { fetchSearchedPhotos } = this.props;
     e.preventDefault();
     fetchSearchedPhotos(query)
       .then(data => data.json())
       .then(json => this.setState({ search: json.results }));
-    // toreSearchedPhotos(json.results));
-    // fetch(`https://api.unsplash.com/search/photos?page=1`)
-    // console.log("suh", query);
-    // <https://api.unsplash.com/search/photos?page=1&query=office>
+    this.resetSearch(this);
   }
 
   clearSearch() {
     this.setState({ search: "" });
+  }
+
+  resetSearch(form) {
+    form.query.value = "";
   }
 
   render() {
@@ -66,6 +62,7 @@ class Gallery extends Component {
       <div>
         <form className="form">
           <input
+            placeholder="Search"
             ref={input => {
               this.query = input;
             }}
