@@ -20,3 +20,5 @@ To watch and build Sass files, run `npm run watch-css`
 Run the test suite with `npm test`
 
 **Find it live on Heroku: [splash-feed](https://splash-feed.herokuapp.com/)**
+
+[yung-splash](https://screenshots.firefox.com/S1ILvIj4bchLoqWf/localhost)
