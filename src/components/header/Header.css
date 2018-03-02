@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans : 400,600,700");
+.barber-header {
+  display: flex;
+  height: 150px;
+  margin: 0 30px 0 30px;
+  padding: 20px;
+  font-size: 1.4em;
+  color: #000000;
+  align-items: center;
+  justify-content: space-between; }
+  .barber-header .btns {
+    display: flex; }
+    .barber-header .btns .btn {
+      display: flex;
+      height: 50px;
+      width: 100px;
+      margin: 10px;
+      padding: 0 7px 0 7px;
+      background: none;
+      font-size: 20px;
+      color: #2f80ed;
+      border: none;
+      border-radius: 2px;
+      justify-content: space-around;
+      align-items: center; }
+      .barber-header .btns .btn img {
+        height: 15px;
+        width: 15px; }
+      .barber-header .btns .btn:hover {
+        cursor: pointer;
+        background: #33adff;
+        color: white; }
+      .barber-header .btns .btn:active {
+        background: #3f67d4; }
+    .barber-header .btns .active {
+      background: #2f80ed;
+      color: white; }
+
+.barber-title {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #000000;
+  padding-right: 20px; }
+  .barber-title:hover {
+    color: #33adff; }
